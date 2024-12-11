@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalender Tahunan</title>
+    <style>
+         /* Global Styles */
+         body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #f39c12;
+        }
+
+       body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #eaf7ea; /* Hijau lembut */
+    color: #0f5132; /* Hijau gelap */
+}
+
+header {
+  
+    text-align: center;}
+   
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h2 {
+    color: #0f5132; /* Hijau gelap */
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.benefit {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    padding: 15px;
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.benefit:hover {
+    transform: scale(1.02);
+}
+
+.benefit img {
+    width: 30%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #0f5132; /* Hijau gelap */
+}
+
+.benefit p {
+    color: #0f5132; /* Hijau gelap */
+}
+
+/* Kalender */
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+    justify-content: center;
+}
+
+.month {
+    flex: 1 0 30%;
+    margin: 10px;
+    background-color: #d9f2dc; /* Hijau lembut */
+    border: 1px solid #0f5132; /* Hijau gelap */
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.month h2 {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.days-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.days-header div {
+    padding: 10px;
+    background-color: #6fbf73; /* Hijau terang */
+    color: white;
+    border-radius: 5px;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #eaf7ea; /* Hijau lembut */
+    border: 1px solid #0f5132; /* Hijau gelap */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.day:hover {
+    background-color: #6fbf73; /* Hijau terang */
+    color: white;
+}
+
+.day.disabled {
+    background-color: #d9f2dc; /* Hijau lembut */
+    cursor: not-allowed;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #0f5132; /* Hijau gelap */
+}
+
+.modal-content textarea {
+    width: 100%;
+    height: 100px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #0f5132; /* Hijau gelap */
+    border-radius: 5px;
+    background-color: #d9f2dc; /* Hijau lembut */
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6fbf73; /* Hijau terang */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+.modal-content button:hover {
+    background-color: #0f5132; /* Hijau gelap */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #0f5132; /* Hijau gelap */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://cintailmu.webz.biz/wp-content/uploads/2023/08/logo_sci-removebg-preview.png" alt="Logo Sekolah">
+            <h3>MA IT Sekolah Cinta Ilmu</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="absensi.html">Absensi Kelas</a></li>
+                <li><a href="absensiguru.html">Absensi Guru</a></li>
+                <li><a href="kalender.html">Kalender Tahunan</a></li>
+                <li><a href="tugas.html">Tugas Siswa</a></li>
+                <li><a href="jadwal.html">Jadwal Pelajaran</a></li>
+               
+            </ul>
+        </nav>
+       
+    </header>
+
+<div class="container">
+        <h1>Jadwal kegiatan MA IT Sekolah Cinta Ilmu</h1>
+    
+    
+    <main>
+        <section class="benefit">
+            <h2>Student of the month</h2>
+            <img src="student.png" alt="Peningkatan Pengetahuan">
+            <p>Setiap bulan sekalii.</p>
+        </section>
+        
+        <section class="benefit">
+            <h2>Outdoor school</h2>
+            <img src="outdoor.png" alt="Berpikir Kritis">
+            <p>tanggal 14 November</p>
+        </section>
+
+        <h1>Kalender Tahunan</h1>       
+<div class="calendar" id="calendar"></div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h3 id="modal-date">Tanggal</h3>
+        <textarea id="event-details" placeholder="Tambahkan kegiatan..."></textarea>
+        <button onclick="saveEvent()">Simpan</button>
+        <button onclick="closeModal()">Tutup</button>
+    </div>
+</div>
+
+<script>
+    const calendar = document.getElementById('calendar');
+    const modal = document.getElementById('modal');
+    const modalDate = document.getElementById('modal-date');
+    const eventDetails = document.getElementById('event-details');
+
+    const months = [
+        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ];
+
+    const daysOfWeek = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+
+    const events = {}; // Objek untuk menyimpan kegiatan berdasarkan tanggal
+
+    function createCalendar(year) {
+        for (let month = 0; month < 12; month++) {
+            const monthDiv = document.createElement('div');
+            monthDiv.classList.add('month');
+            monthDiv.innerHTML = `<h2>${months[month]}</h2>`;
+
+            const daysHeader = document.createElement('div');
+            daysHeader.classList.add('days-header');
+            daysOfWeek.forEach(day => {
+                const dayHeader = document.createElement('div');
+                dayHeader.textContent = day;
+                daysHeader.appendChild(dayHeader);
+            });
+
+            const daysDiv = document.createElement('div');
+            daysDiv.classList.add('days');
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            // Placeholder untuk hari sebelum tanggal 1
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.classList.add('day', 'disabled');
+                daysDiv.appendChild(emptyDay);
+            }
+
+            // Tambahkan tanggal
+            for (let day = 1; day <= daysInMonth; day++) {
+                const date = new Date(year, month, day);
+                const dayDiv = document.createElement('div');
+                dayDiv.classList.add('day');
+                dayDiv.innerHTML = `<strong>${day}</strong>`;
+                dayDiv.onclick = () => openModal(year, month, day);
+                daysDiv.appendChild(dayDiv);
+            }
+
+            monthDiv.appendChild(daysHeader);
+            monthDiv.appendChild(daysDiv);
+            calendar.appendChild(monthDiv);
+        }
+    }
+
+    function openModal(year, month, day) {
+        const dateKey = `${year}-${month + 1}-${day}`;
+        modalDate.textContent = `Kegiatan untuk ${day} ${months[month]} ${year}`;
+        eventDetails.value = events[dateKey] || '';
+        modal.dataset.date = dateKey;
+        modal.classList.add('show');
+    }
+
+    function saveEvent() {
+        const dateKey = modal.dataset.date;
+        const details = eventDetails.value.trim();
+        if (details) {
+            events[dateKey] = details;
+            alert("Kegiatan berhasil disimpan!");
+        } else {
+            delete events[dateKey];
+            alert("Kegiatan dihapus.");
+        }
+        closeModal();
+    }
+
+    function closeModal() {
+        modal.classList.remove('show');
+    }
+
+    createCalendar(new Date().getFullYear());
+</script>
+
+
+        
+</body>
+</html>

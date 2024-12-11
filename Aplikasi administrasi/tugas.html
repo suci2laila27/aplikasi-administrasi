@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Siswa Sekolah</title>
+
+    <!-- Inline CSS -->
+    <style>
+         /* Global Styles */
+         body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #f39c12;
+        }
+        /* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+/* Navbar */
+nav {
+    background-color: #2c3e50;
+    padding: 15px 0;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Main Content */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.task-item {
+    background-color: #f8f9f9;
+    padding: 10px;
+    border: 1px solid #d5dbdb;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.task-item:hover {
+    background-color: #aed6f1;
+    transform: scale(1.02);
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="date"] {
+    padding: 10px;
+    border: 1px solid #d5dbdb;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #2c3e50;
+    outline: none;
+}
+
+.btn-submit {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2c3e50;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #1abc9c;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 20px;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://cintailmu.webz.biz/wp-content/uploads/2023/08/logo_sci-removebg-preview.png" alt="Logo Sekolah">
+            <h3>MA IT Sekolah Cinta Ilmu</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="absensi.html">Absensi Kelas</a></li>
+                <li><a href="absensiguru.html">Absensi Guru</a></li>
+                <li><a href="kalender.html">Kalender Tahunan</a></li>
+                <li><a href="tugas.html">Tugas Siswa</a></li>
+                <li><a href="jadwal.html">Jadwal Pelajaran</a></li>
+               
+            </ul>
+        </nav>
+       
+    </header>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Daftar Tugas Siswa</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav>
+            <div class="navbar">
+                <span id="date"></span>
+                <span>Daftar Tugas Siswa</span>
+            </div>
+        </nav>
+    
+        <!-- Main Content -->
+        <div class="container">
+            <h1>Daftar Tugas</h1>
+            <ul id="taskList">
+                <!-- Daftar tugas akan diisi melalui JavaScript -->
+            </ul>
+    
+            <!-- Formulir untuk Menambah Tugas -->
+            <h2>Tambah Tugas Baru</h2>
+            <form id="taskForm">
+                <label for="assignment">Tugas:</label>
+                <input type="text" id="assignment" name="assignment" placeholder="Nama Tugas" required>
+    
+                <label for="deadline">Tenggat Waktu:</label>
+                <input type="date" id="deadline" name="deadline" required>
+    
+                <button type="submit" class="btn-submit">Tambah Tugas</button>
+            </form>
+        </div>
+    
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Sekolah Cinta Ilmu</p>
+        </footer>
+    
+        <!-- JavaScript -->
+        <script>
+            const taskList = [
+                { name: "Matematika: Persamaan Linear", deadline: "2024-12-05" },
+                { name: "Bahasa Indonesia: Membaca Cerpen", deadline: "2024-12-10" },
+            ];
+    
+            const renderTaskList = () => {
+                const taskListElement = document.getElementById('taskList');
+                taskListElement.innerHTML = '';
+    
+                taskList.forEach((task, index) => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${task.name} (Tenggat: ${task.deadline})`;
+                    listItem.classList.add('task-item');
+                    listItem.onclick = () => alert(`Tugas: ${task.name}\nTenggat: ${task.deadline}`);
+                    taskListElement.appendChild(listItem);
+                });
+            };
+    
+            document.getElementById('taskForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const assignment = document.getElementById('assignment').value;
+                const deadline = document.getElementById('deadline').value;
+    
+                if (assignment && deadline) {
+                    taskList.push({ name: assignment, deadline: deadline });
+                    renderTaskList();
+                    e.target.reset();
+                }
+            });
+    
+            // Set Current Date in Navbar
+            const date = new Date();
+            document.getElementById('date').textContent = date.toLocaleDateString('id-ID', {
+                weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+            });
+    
+            // Initial Render
+            renderTaskList();
+        </script>
+    </body>
+    </html>
+    
+</body>
+</html>

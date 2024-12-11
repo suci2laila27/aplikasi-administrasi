@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda Sekolah</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        /* Hero Section */
+        #hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            color: #fff;
+        }
+
+        #hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        #hero button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f39c12;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #hero button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        section:nth-child(even) {
+            background-color: #ecf0f1;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;}
+        
+            .image-wrapper {
+  width: 250px; /* Atur ukuran lebar */
+  height: 350px; /* Atur ukuran tinggi */
+  overflow: hidden; /* Sembunyikan area di luar batas */
+  border-radius: 20px; /* Bingkai dengan sudut melengkung */
+  border: 5px solid #2c3e50; /* Tambahkan bingkai */
+  margin: 0 auto; /* Pusatkan wrapper */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Sesuaikan gambar dengan wrapper */
+  display: block;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="https://cintailmu.webz.biz/wp-content/uploads/2023/08/logo_sci-removebg-preview.png" alt="Logo Sekolah">
+            <h1>MA IT Sekolah Cinta Ilmu</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Beranda</a></li>
+                <li><a href="absensi.html">Absensi Kelas</a></li>
+                <li><a href="absensiguru.html">Absensi Guru</a></li>
+                <li><a href="kalender.html">Kalender Tahunan</a></li>
+                <li><a href="tugas.html">Tugas Siswa</a></li>
+                <li><a href="jadwal.html">Jadwal Pelajaran</a></li>
+
+            </ul>
+        </nav>
+       
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h2>Selamat Datang di MA IT Sekolah Cinta Ilmu</h2>
+        <p>Jago Tahfidz Jago IT  Free laptop</p>
+        <button onclick="scrollToSection('absensi-kelas')">Mulai Jelajahi</button>
+    </section>
+
+   
+    
+        <!-- Header -->
+        <header style="background-color: #2c3e50; color: #fff; padding: 20px; text-align: center;">
+            <h1>Galeri Foto Sekolah</h1>
+            <p>Fasilitas.</p>
+        </header>
+    
+        <div class="container">
+            <h1>Gedung MA IT Sekolah Cinta Ilmu</h1>
+            <div class="image-wrapper">
+              <img src="https://cintailmu.sch.id/wp-content/uploads/2023/09/Picture1-e1695785143779-689x1024.webp" alt="Deskripsi Foto" class="photo">
+            </div>
+
+        <!-- Galeri Foto -->
+        <section style="padding: 20px;">
+            <h2 style="text-align: center; margin-bottom: 20px;">Galeri Kami</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                <!-- Foto 1 -->
+                <div style="width: 200px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="https://cintailmu.sch.id/wp-content/uploads/2023/09/About-MTs-1024x599.webp" alt="Foto 1" style="width: 100%; height: auto;">
+                    <div style="padding: 10px; text-align: center;">
+                        <p style="margin: 0; font-size: 0.9em; color: #555;">Tampak depan</p>
+                    </div>
+                </div>
+                <!-- Foto 2 -->
+                <div style="width: 200px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="https://asset-2.tstatic.net/jabar/foto/bank/images/ruang-kelas-ma-sekolah-cinta-ilmu-di-baleendah-kabupaten-bandung.jpg" alt="Foto 2" style="width: 100%; height: auto;">
+                    <div style="padding: 10px; text-align: center;">
+                        <p style="margin: 0; font-size: 0.9em; color: #555;">Ruang kelas</p>
+                    </div>
+                
+        </section>
+        
+    <!-- Footer -->
+    <footer id="contact">
+        <h2>Kontak Kami</h2>
+        <p>Alamat:  Jl. Raya Laswi No.316, Wargamekar, Kec. Baleendah, Kabupaten Bandung, Jawa Barat 40375</p>
+        <p>Email: sekolahcintailmu@sch.id</p>
+        <p>Telepon: (021) 123-4567</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    </script>
+   
+   
+    
+        <!-- Footer -->
+        <footer style="background-color: #2c3e50; color: #fff; padding: 20px; text-align: center;">
+            <p>&copy; 2024 Nama Sekolah. Semua Hak Dilindungi.</p>
+        </footer>
+    </body>
+    </html>
+    
+</body>
+</html>
